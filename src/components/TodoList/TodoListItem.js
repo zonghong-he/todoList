@@ -13,7 +13,7 @@ function TodoListItem() {
       />
       <p className={isCheck ? 'finish' : ''}>{'Test'}</p>
       <button className="delete-btn">
-        <i class="fa-solid fa-xmark"></i>
+        <i className="fa-solid fa-xmark"></i>
       </button>
     </div>
   );
