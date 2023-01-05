@@ -21,7 +21,8 @@ header .title {
   margin: 0.3rem 0;
   font-weight: normal;
 }
-header .subtitle {
+
+.subtitle {
   margin: 0 0.3rem;
   font-size: 0.8rem;
 }
@@ -98,4 +99,32 @@ header .subtitle {
 .todo-list .item .delete-btn i {
   font-size: 1rem;
   color: #8790ba;
+}
+
+.sortBtn-wrap {
+  margin: 0 1.5em;
+  margin-top: 1rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: end;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  border-top: 2px solid #7694c0;
+}
+.sortBtn-wrap p {
+  margin: 0.5rem 0;
+}
+.sortBtn-wrap .toggle {
+  padding: 0 0 0 0.5rem;
+  background: none;
+  border: none;
+}
+.sortBtn-wrap .toggle i {
+  font-size: 1.5rem;
+  color: #8790ba;
+  vertical-align: middle;
 }/*# sourceMappingURL=style.css.map */

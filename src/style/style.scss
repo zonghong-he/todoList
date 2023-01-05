@@ -1,6 +1,6 @@
 $textColor: #8790ba;
 $borderColor: #7694c0;
-@mixin page-margin{
+@mixin page-margin {
   margin: 0 1.5em;
 }
 
@@ -30,10 +30,11 @@ header {
     margin: 0.3rem 0;
     font-weight: normal;
   }
-  .subtitle {
-    margin: 0 0.3rem;
-    font-size: 0.8rem;
-  }
+}
+
+.subtitle {
+  margin: 0 0.3rem;
+  font-size: 0.8rem;
 }
 
 .progress-bar {
@@ -66,7 +67,7 @@ header {
     justify-content: stretch;
     align-items: center;
     background-color: #fff;
-    border-radius: .3rem ;
+    border-radius: 0.3rem;
     border-left: 5px solid $borderColor;
 
     input[type='checkbox'] {
@@ -78,14 +79,14 @@ header {
       border-radius: 0.3rem;
       margin-right: 1rem;
       &:checked {
-        background: url(../asset/check-solid.svg) $borderColor;        
+        background: url(../asset/check-solid.svg) $borderColor;
       }
     }
     p {
       margin: 0;
       flex-grow: 1;
     }
-    .finish{
+    .finish {
       text-decoration: line-through;
     }
     .delete-btn {
@@ -96,6 +97,29 @@ header {
         font-size: 1rem;
         color: $textColor;
       }
+    }
+  }
+}
+
+.sortBtn-wrap {
+  @include page-margin();
+  margin-top: 1rem;
+  display: flex;
+  justify-content: end;
+  align-items: center;
+  border-top: 2px solid $borderColor;
+
+  p {
+    margin: 0.5rem 0;
+  }
+  .toggle {
+    padding: 0 0 0 0.5rem;
+    background: none;
+    border: none;
+    i {
+      font-size: 1.5rem;
+      color: $textColor;
+      vertical-align: middle;
     }
   }
 }
