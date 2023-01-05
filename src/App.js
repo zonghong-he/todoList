@@ -1,8 +1,12 @@
+import Header from './components/Header/Header';
+import ProgressBar from './components/ProgressBar/ProgressBar';
 import logo from './logo.svg';
 
 function App() {
   return (
-    <h1>hello</h1>
+    <>
+      <Header />
+    </>
   );
 }
 
