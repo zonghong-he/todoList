@@ -1,7 +1,19 @@
 $textColor: #8790ba;
 $borderColor: #7694c0;
+
 @mixin page-margin {
   margin: 0 1.5em;
+}
+
+@mixin icon-btn {
+  padding: 0;
+  background: none;
+  border: none;
+  i {
+    font-size: 1rem;
+    color: $textColor;
+    vertical-align: middle;
+  }
 }
 
 body {
@@ -90,13 +102,7 @@ header {
       text-decoration: line-through;
     }
     .delete-btn {
-      padding: 0;
-      background: none;
-      border: none;
-      i {
-        font-size: 1rem;
-        color: $textColor;
-      }
+      @include icon-btn();
     }
   }
 }
@@ -113,13 +119,41 @@ header {
     margin: 0.5rem 0;
   }
   .toggle {
-    padding: 0 0 0 0.5rem;
-    background: none;
-    border: none;
+    @include icon-btn();
+    padding-left: 0.5rem;
     i {
       font-size: 1.5rem;
+    }
+  }
+}
+
+.addItem-wrap {
+  @include page-margin();
+  margin-top: 5rem;
+
+  p {
+    margin: 0.2rem 0;
+  }
+  form {
+    display: flex;
+    input {
+      padding: 0.6rem 1rem;
+      flex-grow: 1;
+      -webkit-appearance: none;
+      border: none;
+      border-radius: 0.2rem;
       color: $textColor;
-      vertical-align: middle;
+      font-size: 1rem;
+    }
+    .add-btn {
+      @include icon-btn();
+      margin-left: 0.2rem;
+      width: 3rem;
+      border-radius: 0.3rem;
+      background-color: $borderColor;
+      i {
+        color: white;
+      }
     }
   }
 }
