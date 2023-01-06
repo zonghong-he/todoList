@@ -9,9 +9,7 @@ function TodoList() {
   const list = state.list;
   const isScroll = state.scrollToBottom;
   const components = useRef(null);
-  const bottom = useRef(null);
   useEffect(() => {
-    console.log(components);
     if (!isScroll) return;
     components.current.scrollTo({
       top: components.current.scrollHeight,
@@ -31,7 +29,7 @@ function TodoList() {
           />
         );
       })}
-      <div className='hidden' ref={bottom}></div>
+      <div className='hidden' ></div>
     </div>
   );
 }
