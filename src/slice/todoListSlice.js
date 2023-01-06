@@ -27,8 +27,15 @@ export const todoListSlice = createSlice({
       });
       state.list = newList;
     },
+    deleteTodo: (state, actions) => {
+      const key = actions.payload;
+      const newList = state.list.filter((item) => {
+        return item.dateTime !== key;
+      });
+      state.list = newList;
+    },
   },
 });
 
-export const { addTodo, toggoleFinish } = todoListSlice.actions;
+export const { addTodo, toggoleFinish, deleteTodo } = todoListSlice.actions;
 export default todoListSlice.reducer;
