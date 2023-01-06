@@ -16,7 +16,6 @@ export const todoListSlice = createSlice({
         isFinish: false,
       };
       state.list = [...state.list, newItem];
-      console.log(state.list);
     },
   },
 });
