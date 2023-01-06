@@ -8,7 +8,7 @@ function App() {
   return (
     <>
       <Header />
-      <ProgressBar progressPercent={0}/>     
+      <ProgressBar/>     
       <TodoList/> 
       <SortBtn/>
       <AddItem/>

@@ -2,6 +2,7 @@ import { createSlice } from '@reduxjs/toolkit';
 
 const initialState = {
   list: [],
+  scrollToBottom: false,
 };
 
 export const todoListSlice = createSlice({
@@ -16,6 +17,7 @@ export const todoListSlice = createSlice({
         isFinish: false,
       };
       state.list = [...state.list, newItem];
+      state.scrollToBottom = true;
     },
     toggoleFinish: (state, actions) => {
       const key = actions.payload;
@@ -34,8 +36,13 @@ export const todoListSlice = createSlice({
       });
       state.list = newList;
     },
+    setScrolltoBottomFalse: (state, actions) => {
+      state.scrollToBottom = false;
+      console.log("set");
+    },
   },
 });
 
-export const { addTodo, toggoleFinish, deleteTodo } = todoListSlice.actions;
+export const { addTodo, toggoleFinish, deleteTodo, setScrolltoBottomFalse } =
+  todoListSlice.actions;
 export default todoListSlice.reducer;
