@@ -1,16 +1,21 @@
-import { useState } from 'react';
+import { useDispatch } from 'react-redux';
+import { toggoleFinish } from '../../slice/todoListSlice';
 
-function TodoListItem({content,isCheck,dateTime}) {
+function TodoListItem({content,isFinish,dateTime}) {
+  const dispatch = useDispatch()
+  const handleToggleFinsishState = (key)=>{
+    dispatch(toggoleFinish(key))
+  }
   return (
     <div className="item">
       <input
         type="checkbox"
-        checked={isCheck}
-        onChange={() => {
-          
+        checked={isFinish}
+        onChange={()=>{
+          handleToggleFinsishState(dateTime)
         }}
       />
-      <p className={isCheck ? 'finish' : ''}>{content}</p>
+      <p className={isFinish ? 'finish' : ''}>{content}</p>
       <button className="delete-btn">
         <i className="fa-solid fa-xmark"></i>
       </button>

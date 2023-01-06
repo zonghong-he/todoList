@@ -12,6 +12,7 @@ function TodoList() {
             key={item.dateTime}
             content={item.content}
             dateTime={item.dateTime}
+            isFinish={item.isFinish}
           />
         );
       })}
