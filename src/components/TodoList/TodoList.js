@@ -3,7 +3,7 @@ import TodoListItem from './TodoListItem';
 
 function TodoList() {
   const list = useSelector((state) => state.todoListReducer.list);
-  console.log(list);
+  
   return (
     <div className="todo-list">
       {list.map((item) => {

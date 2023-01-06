@@ -1,32 +1,15 @@
-import { useEffect, useState } from 'react';
+import { useSelector } from 'react-redux';
 
-function ProgressBar({ progressPercent }) {
-  const [percent, setPercent] = useState(0);
-  useEffect(() => {
-    if (progressPercent === percent) return;
-    let currentPercent = percent;
-    let smooth = 0.5; //動畫速度
-
-    //進度條動畫
-    function timer() {
-      if (progressPercent === currentPercent) return;
-
-      if (progressPercent > percent) {
-        setPercent((cur) => cur + smooth);
-        currentPercent += smooth;
-      } else if (progressPercent < percent) {
-        setPercent((cur) => cur - smooth);
-        currentPercent -= smooth;
-      }
-
-      window.requestAnimationFrame(timer);
-    }
-
-    window.requestAnimationFrame(timer);
-  }, [progressPercent]);
+function ProgressBar() {
+  const list = useSelector((state) => state.todoListReducer.list);
+  const listCount = list.length;
+  const finishCount = list.filter((item) => item.isFinish).length;
+  let percent = +((finishCount / listCount) * 100).toFixed(0);
+  if (!percent) percent = 0;
+  console.log(percent);
   return (
     <div className="progress-bar">
-      <p>{percent.toFixed(0)}%</p>
+      <p>{percent}%</p>
       <div className="slider">
         <div className="progress" style={{ width: percent + '%' }}></div>
       </div>
