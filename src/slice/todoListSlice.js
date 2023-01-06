@@ -3,7 +3,21 @@ import { createSlice } from '@reduxjs/toolkit';
 const initialState = {
   list: [],
   scrollToBottom: false,
+  sort: false,
 };
+
+function sortList(list, sort) {
+  if (sort) {
+    const finishList = list.filter((item) => item.isFinish);
+    const todoList = list.filter((item) => !item.isFinish);
+    return [...todoList, ...finishList];
+  }
+
+  const result = list.sort((pre, next) => {
+    return pre.dateTime - next.dateTime;
+  });
+  return result;
+}
 
 export const todoListSlice = createSlice({
   name: 'listItem',
@@ -16,7 +30,8 @@ export const todoListSlice = createSlice({
         dateTime: currentDate.getTime(),
         isFinish: false,
       };
-      state.list = [...state.list, newItem];
+      const newList = [...state.list, newItem];
+      state.list = sortList(newList, state.sort);
       state.scrollToBottom = true;
     },
     toggoleFinish: (state, actions) => {
@@ -27,7 +42,7 @@ export const todoListSlice = createSlice({
         }
         return item;
       });
-      state.list = newList;
+      state.list = sortList(newList, state.sort);
     },
     deleteTodo: (state, actions) => {
       const key = actions.payload;
@@ -40,19 +55,10 @@ export const todoListSlice = createSlice({
       state.scrollToBottom = false;
     },
     sortTodoList: (state, actions) => {
-      const sort = actions.payload;
+      state.sort = actions.payload;
       const newList = [...state.list];
       //sort == true 以是否完成排序 ，flase 以新增時間排序
-      if (sort) {
-        const finishList = newList.filter((item) => item.isFinish);
-        const todoList = newList.filter((item) => !item.isFinish);
-        state.list = [...todoList, ...finishList];
-      } else {
-        const result = newList.sort((pre, next) => {
-          return pre.dateTime - next.dateTime;
-        });
-        state.list = result;
-      }
+      state.list = sortList(newList, state.sort);
     },
   },
 });
