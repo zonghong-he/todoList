@@ -3,9 +3,11 @@ import { deleteTodo, toggoleFinish } from '../../slice/todoListSlice';
 
 function TodoListItem({ content, isFinish, dateTime }) {
   const dispatch = useDispatch();
+
   const handleToggleFinsishState = (key) => {
     dispatch(toggoleFinish(key));
   };
+  
   const handleDeleteTodo = (key) => {
     dispatch(deleteTodo(key));
   };

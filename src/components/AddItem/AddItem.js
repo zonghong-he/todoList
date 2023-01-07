@@ -4,11 +4,12 @@ import { addTodo } from '../../slice/todoListSlice';
 
 function AddItem() {
   const [content, setContent] = useState('');
-
   const dispatch = useDispatch();
+  
   const handleAddTodo = (content) => {
     dispatch(addTodo(content));
   };
+
   return (
     <div className="addItem-wrap">
       <p>Add to list</p>

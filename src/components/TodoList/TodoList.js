@@ -9,14 +9,17 @@ function TodoList() {
   const list = state.list;
   const isScroll = state.scrollToBottom;
   const components = useRef(null);
+
   useEffect(() => {
+    //isScroll狀態為true時移至底部
     if (!isScroll) return;
     components.current.scrollTo({
       top: components.current.scrollHeight,
       behavior: 'smooth',
     });
     dispatch(setScrolltoBottomFalse());
-  }, [components, isScroll]);
+  }, [components, isScroll, dispatch]);
+
   return (
     <div className="todo-list" ref={components}>
       {list.map((item) => {
@@ -29,7 +32,7 @@ function TodoList() {
           />
         );
       })}
-      <div className='hidden' ></div>
+      <div className="hidden"></div>
     </div>
   );
 }

@@ -6,6 +6,7 @@ function ProgressBar() {
   const finishCount = list.filter((item) => item.isFinish).length;
   let percent = +((finishCount / listCount) * 100).toFixed(0);
   if (!percent) percent = 0;
+  
   return (
     <div className="progress-bar">
       <p>{percent}%</p>
