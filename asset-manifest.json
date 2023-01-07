@@ -1,16 +1,16 @@
 {
   "files": {
-    "main.css": "/static/css/main.f54ad930.css",
-    "main.js": "/static/js/main.a178567d.js",
-    "static/js/787.a5cad257.chunk.js": "/static/js/787.a5cad257.chunk.js",
-    "index.html": "/index.html",
-    "static/media/check-solid.svg": "/static/media/check-solid.ce362845792ab45f7ca2.svg",
-    "main.f54ad930.css.map": "/static/css/main.f54ad930.css.map",
-    "main.a178567d.js.map": "/static/js/main.a178567d.js.map",
-    "787.a5cad257.chunk.js.map": "/static/js/787.a5cad257.chunk.js.map"
+    "main.css": "/todoList/static/css/main.d84ae9dc.css",
+    "main.js": "/todoList/static/js/main.9c5bcbf8.js",
+    "static/js/787.a5cad257.chunk.js": "/todoList/static/js/787.a5cad257.chunk.js",
+    "index.html": "/todoList/index.html",
+    "static/media/check-solid.svg": "/todoList/static/media/check-solid.ce362845792ab45f7ca2.svg",
+    "main.d84ae9dc.css.map": "/todoList/static/css/main.d84ae9dc.css.map",
+    "main.9c5bcbf8.js.map": "/todoList/static/js/main.9c5bcbf8.js.map",
+    "787.a5cad257.chunk.js.map": "/todoList/static/js/787.a5cad257.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.f54ad930.css",
-    "static/js/main.a178567d.js"
+    "static/css/main.d84ae9dc.css",
+    "static/js/main.9c5bcbf8.js"
   ]
 }
