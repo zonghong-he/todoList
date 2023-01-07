@@ -77,7 +77,7 @@ header {
     -webkit-appearance: none;
   }
   &::-webkit-scrollbar:vertical {
-    width: .3rem;
+    width: 0.3rem;
   }
   &::-webkit-scrollbar-thumb {
     border-radius: 8px;
@@ -93,6 +93,12 @@ header {
     background-color: #fff;
     border-radius: 0.3rem;
     border-left: 5px solid $borderColor;
+    transition: all .5s;
+
+    &:has(input[type='checkbox']:checked){
+      background-color: #eee;
+      opacity: .7;
+    }
 
     input[type='checkbox'] {
       $scale: 1.2rem;
@@ -165,6 +171,9 @@ header {
       background-color: $borderColor;
       i {
         color: white;
+      }
+      &:active {
+        background-color: #5e78a0;
       }
     }
   }

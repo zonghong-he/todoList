@@ -84,6 +84,12 @@ header .title {
   background-color: #fff;
   border-radius: 0.3rem;
   border-left: 5px solid #7694c0;
+  -webkit-transition: all 0.5s;
+  transition: all 0.5s;
+}
+.todo-list .item:has(input[type=checkbox]:checked) {
+  background-color: #eee;
+  opacity: 0.7;
 }
 .todo-list .item input[type=checkbox] {
   width: 1.2rem;
@@ -187,4 +193,7 @@ header .title {
 }
 .addItem-wrap form .add-btn i {
   color: white;
+}
+.addItem-wrap form .add-btn:active {
+  background-color: #5e78a0;
 }/*# sourceMappingURL=style.css.map */
